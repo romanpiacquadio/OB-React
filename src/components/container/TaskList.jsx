@@ -27,8 +27,25 @@ const TaskListComponent = () => {
     };
   }, [tasks]);
 
-  const changeCompleted = (id) => {
-    console.log('todo')
+  function completeTask ( task ) {
+    console.log('Complete task: ', task)
+    const index = tasks.indexOf(task)
+    const tempTasks = [...tasks]
+    tempTasks[index].completed = !tempTasks[index].completed
+
+    setTasks(tempTasks)
+  }
+
+  function deleteTask ( task ) {
+    const index = tasks.indexOf(task)
+    const tempTasks = [...tasks]
+    tempTasks.splice( index, 1 )
+    setTasks(tempTasks)
+  }
+
+  function addTask ( task ) {
+    const tempTasks = [...tasks, task]
+    setTasks(tempTasks)
   }
   
   return (
@@ -57,13 +74,16 @@ const TaskListComponent = () => {
                 { tasks.map( (task, index) => (
                   <TaskComponent
                     key={index}
-                    task={task}>
+                    task={task}
+                    complete={completeTask}
+                    deleteTask={deleteTask}
+                  >
                   </TaskComponent>
                 ))}
               </tbody>
             </table>
           </div>
-          <TaskForm></TaskForm>
+          <TaskForm add={addTask}></TaskForm>
         </div>
       </div>
       
