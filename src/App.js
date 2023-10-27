@@ -1,5 +1,7 @@
-import Father from './components/container/Father';
-import TaskListComponent from './components/container/TaskList';
+// import Father from './components/container/Father';
+// import TaskListComponent from './components/container/TaskList';
+import LoginFormik from './components/pure/forms/LoginFormik';
+import RegisterFormik from './components/pure/forms/RegisterFormik';
 // import Ejemplo1 from './hooks/Ejemplo1';
 // import Ejemplo2 from './hooks/Ejemplo2';
 // import Ejemplo3 from './hooks/Ejemplo3';
@@ -10,7 +12,9 @@ function App() {
   return (
     <div className="App">
       {/* <header className="App-header"> */}
-        <TaskListComponent></TaskListComponent>
+        {/* <LoginFormik></LoginFormik> */}
+        <RegisterFormik></RegisterFormik>
+        {/* <TaskListComponent></TaskListComponent> */}
         {/* <Ejemplo1></Ejemplo1> */}
         {/* <Ejemplo2></Ejemplo2> */}
         {/* <Ejemplo3></Ejemplo3> */}
